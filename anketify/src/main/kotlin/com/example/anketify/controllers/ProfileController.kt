@@ -44,6 +44,7 @@ class ProfileController(
     fun createForm(@RequestBody formRequest: FormRequest): ResponseEntity<FormURLResponse> {
         val questionsEntity = formRequest.questions.map { q ->
             QuestionEntity(description = q.description,
+                imageDescription = q.imageDescription,
                 optional = q.optional,
                 canSelectMoreThanOne = q.canSelectMoreThanOne)
         }

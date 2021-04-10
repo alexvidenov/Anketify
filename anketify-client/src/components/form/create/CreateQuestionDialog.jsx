@@ -11,11 +11,6 @@ import {
 } from "@material-ui/core";
 import { useState } from "react";
 import { Formik, Form, Field, FieldArray } from "formik";
-import { Question } from "../../../models/Question";
-
-interface Props {
-  handleQuestion: (question: Question) => void;
-}
 
 const useStyles = makeStyles((_) => ({
   buttonPadding: {
@@ -23,8 +18,10 @@ const useStyles = makeStyles((_) => ({
   },
 }));
 
-const CreateQuestionDialog = ({ handleQuestion }: Props) => {
+const CreateQuestionDialog = ({ handleQuestion }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+
+  const [imageData, setImageData] = useState("");
 
   const classes = useStyles();
 
@@ -34,6 +31,28 @@ const CreateQuestionDialog = ({ handleQuestion }: Props) => {
 
   const handleCloseDialog = () => {
     setDialogOpen(false);
+  };
+
+  const fileToBase64 = (file) =>
+    new Promise((resolve, _) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(file);
+    });
+
+  const handlePickedImage = (event) => {
+    const file = event.target.files[0] || null;
+    if (!file) {
+      setImageData("");
+      return;
+    }
+    fileToBase64(file).then((base64Image) => {
+      console.log(typeof dataUri);
+      console.log("Image" + base64Image);
+      setImageData(base64Image);
+    });
   };
 
   return (
@@ -59,25 +78,34 @@ const CreateQuestionDialog = ({ handleQuestion }: Props) => {
           <Formik
             initialValues={{
               description: "",
+              imageDescription: "",
               optional: false,
               canSelectMoreThanOne: false,
               answers: [],
             }}
             onSubmit={(values) => {
               values.answers.reverse();
+              values.imageDescription = imageData;
               handleQuestion(values);
             }}
             render={({ values }) => (
               <Form>
                 <Field id="description" name="description">
-                  {({ field }: any) => (
+                  {({ field }) => (
                     <TextField placeholder="Enter description" {...field} />
                   )}
                 </Field>
 
+                <div>
+                  {imageData !== "" && (
+                    <img width="300" height="300" src={imageData} alt="" />
+                  )}
+                  <input type="file" onChange={handlePickedImage} />
+                </div>
+
                 <label>
                   <Field type="checkbox" name="optional">
-                    {({ field }: any) => (
+                    {({ field }) => (
                       <Checkbox checked={values.optional} {...field} />
                     )}
                   </Field>
@@ -86,7 +114,7 @@ const CreateQuestionDialog = ({ handleQuestion }: Props) => {
 
                 <label>
                   <Field type="checkbox" name="canSelectMoreThanOne">
-                    {({ field }: any) => (
+                    {({ field }) => (
                       <Checkbox
                         checked={values.canSelectMoreThanOne}
                         {...field}
@@ -101,10 +129,10 @@ const CreateQuestionDialog = ({ handleQuestion }: Props) => {
                   render={(arrayHelpers) => (
                     <div>
                       {values.answers && values.answers.length > 0 ? (
-                        values.answers.map((answer, index) => (
+                        values.answers.map((_, index) => (
                           <div key={index}>
                             <Field type="text" name={`answers.${index}`}>
-                              {({ field }: any) => <TextField {...field} />}
+                              {({ field }) => <TextField {...field} />}
                             </Field>
                             <Button onClick={() => arrayHelpers.remove(index)}>
                               -

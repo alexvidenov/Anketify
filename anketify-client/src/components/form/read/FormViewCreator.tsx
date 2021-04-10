@@ -70,7 +70,13 @@ const FormViewCreator = ({ form, userAnswers }: Props) => {
             label="Is form closed?"
           />
         </Grid>
-        <Button onClick={handleFormStateUpdate}>Save updates</Button>
+        <Button
+          onClick={handleFormStateUpdate}
+          color="primary"
+          variant="outlined"
+        >
+          Save updates
+        </Button>
         <QuestionsList
           onFinishedAnswering={null}
           formId={form.id}

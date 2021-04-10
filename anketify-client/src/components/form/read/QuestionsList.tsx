@@ -50,6 +50,7 @@ const QuestionsList = ({
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
 
   const handleNewUserAnswer = (answer: UserAnswer) => {
+    console.log("New user answer: " + JSON.stringify(answer));
     setUserAnswers([...userAnswers, answer]);
   };
 
@@ -93,6 +94,14 @@ const QuestionsList = ({
                     {question.description}
                   </FormLabel>
                 </FormControl>
+                {question.imageDescription !== undefined && (
+                  <img
+                    width="400"
+                    height="400"
+                    src={question.imageDescription}
+                    alt=""
+                  ></img>
+                )}
                 {onFinishedAnswering === null && (
                   <Grid
                     container
@@ -179,6 +188,8 @@ const QuestionsList = ({
           onClick={() => {
             onFinishedAnswering(userAnswers);
           }}
+          color="primary"
+          variant="outlined"
         >
           SUBMIT
         </Button>

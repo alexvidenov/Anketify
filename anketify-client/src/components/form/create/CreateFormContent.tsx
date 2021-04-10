@@ -33,7 +33,7 @@ const CreateFormContent = () => {
       .createForm(form)
       .then((url) => {
         alert(`Your URL is ${url}`);
-        // show dialog wiht the URL
+        // show dialog wiht the URL and not that
       })
       .catch((error) => console.log(error)); // again, show dialog
   };
