@@ -92,25 +92,25 @@ class ProfileController(
         FetchUtils.getModelSafe(formService.getById(formId), { form ->
             if (currentUser.id == form.userId!!) {
                 val questionAnswers =
-                    mutableMapOf<Long, MutableList<Int>>() // question_id to list of indexes as answers 1 2 1 2 1
+                    mutableMapOf<Long, MutableList<Int>>() // question_id -> list of indexes as answers
                 val aggregatedAnswers = mutableMapOf<Long, Int>()
                 val formQuestions = form.questions
                 form.userAnswers.forEach { answer ->
                     val index = answer.index
-                    questionAnswers.getOrPut(answer.questionId, { mutableListOf(index) }).apply {
-                        add(index)
+                    val qAnswer = questionAnswers[answer.questionId]
+                    if (qAnswer !== null) {
+                        qAnswer.apply {
+                            add(index)
+                        }
+                    } else {
+                        questionAnswers[answer.questionId] = mutableListOf(index)
                     }
                 }
                 questionAnswers.forEach { qa ->
                     val question = formQuestions.first { it.id == qa.key }
                     val answers = question.answers
                     for (i in answers.indices) {
-                        print("Frequency for ${answers[i].id}} : ${Collections.frequency(qa.value, i)}")
-                        if (i == 0) {
-                            aggregatedAnswers[answers[i].id] = Collections.frequency(qa.value, i) - 1
-                        } else {
-                            aggregatedAnswers[answers[i].id] = Collections.frequency(qa.value, i)
-                        }
+                        aggregatedAnswers[answers[i].id] = Collections.frequency(qa.value, i)
                     }
                 }
                 return ResponseEntity(UserAnswerAggregation(aggregatedUserAnswers = aggregatedAnswers),

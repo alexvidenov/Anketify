@@ -23,7 +23,7 @@ class JwtAuthenticationController(
 
     @PostMapping("/register")
     fun register(@RequestBody request: UserRequest): ResponseEntity<UserResponse> {
-        val user = request.toEntity(passwordEncoder) // this line simply encodes the user password
+        val user = request.toEntity(passwordEncoder)
         return registerUser(user).map {
             val userPass = UsernamePasswordAuthenticationToken(request.username, request.password)
             val token = loginUser(userPass).orThrow()

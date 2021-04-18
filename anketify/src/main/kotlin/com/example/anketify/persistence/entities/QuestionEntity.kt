@@ -9,7 +9,7 @@ import javax.persistence.*
 @Serializable
 data class QuestionEntity(
     @Column(length = 1000000)
-    val imageDescription: String? = null, // base64 String
+    val imageDescription: String? = null, // base64 String lmao..lazy for more decent solution
     val description: String,
     val optional: Boolean? = false,
     val canSelectMoreThanOne: Boolean? = false,

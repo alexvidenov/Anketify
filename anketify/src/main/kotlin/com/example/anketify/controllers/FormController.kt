@@ -19,13 +19,11 @@ import javax.servlet.http.HttpServletRequest
 @RequestMapping("/forms")
 class FormController(
     private val formService: FormService,
-    private val userAnswerService: UserAnswerService,
-    private val ipAnswerService: IpAnswerService,
+    private val userAnswerService: UserAnswerService?,
+    private val ipAnswerService: IpAnswerService?,
 ) : AuthAwareController() {
-
     @GetMapping(value = ["/{formUUID}"])
     fun getForm(@PathVariable formUUID: String, request: HttpServletRequest): ResponseEntity<FormFetchResponse> {
-        print("UUID: $formUUID")
         val form = formService.findByUUID(UUID.fromString(formUUID))
         return if (form != null) {
             if (form.isClosed == true) {
@@ -51,13 +49,16 @@ class FormController(
             request.remoteAddr + request.remoteHost + request.remotePort
         val form = formService.getByIdUnsafe(userAnswers[0].formId)
         return if (form != null) {
-            if (!form.ipAnswers.any { it.ip == ip }) {
+            if(form.isClosed == true){
+                ResponseEntity(true, HttpStatus.NO_CONTENT)
+            }
+            else if (!form.ipAnswers.any { it.ip == ip }) {
                 userAnswers.forEach {
-                    userAnswerService.create(UserAnswerEntity(index = it.index,
+                    userAnswerService?.create(UserAnswerEntity(index = it.index,
                         questionId = it.questionId,
                         formId = it.formId, ip = ip))
                 }
-                ipAnswerService.create(IpAnswerEntity(ip = ip, formId = form.id))
+                ipAnswerService?.create(IpAnswerEntity(ip = ip, formId = form.id))
                 ResponseEntity(true, HttpStatus.OK)
             } else ResponseEntity(false, HttpStatus.FORBIDDEN)
         } else ResponseEntity(false, HttpStatus.NOT_FOUND)

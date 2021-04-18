@@ -11,6 +11,4 @@ class FormService(private val formRepository: FormRepository) : BaseService<Form
     fun findByUUID(uuid: UUID): FormEntity? = formRepository.findByFormUUID_Uuid(uuid)
 
     fun findPublic(): List<FormEntity>? = formRepository.findByIsPublicAndIsClosedIsFalse(isPublic = true)
-
-    fun removeById(id: Long) = formRepository.deleteById(id)
 }

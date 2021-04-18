@@ -31,6 +31,8 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
+    testImplementation("org.seleniumhq.selenium:selenium-java:3.14.0")
+    testImplementation("org.mockito:mockito-junit-jupiter:2.23.0")
 }
 
 tasks.withType<KotlinCompile> {

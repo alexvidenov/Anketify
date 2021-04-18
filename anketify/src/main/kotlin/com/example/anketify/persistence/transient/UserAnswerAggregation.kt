@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class UserAnswerAggregation(
-    val aggregatedUserAnswers: Map<Long, Int> = mapOf(), // List of all answerId -> votes mappings
+    val aggregatedUserAnswers: Map<Long, Int> = mapOf(), // Map of all answerId -> votes mappings
 )
