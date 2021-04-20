@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.264s</div>
+<div class="counter">1.620s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,8 +78,23 @@
 </tr>
 </thead>
 <tr>
+<td class="success">findForm()</td>
+<td class="success">0.085s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">submitAnswersFailing()</td>
-<td class="success">0.264s</td>
+<td class="success">0.614s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFormClosed()</td>
+<td class="success">0.281s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFormFoundAndNotClosed()</td>
+<td class="success">0.640s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,19 +102,19 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>13:11:56.583 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-13:11:56.601 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-13:11:56.691 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.anketify.AnketifyApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-13:11:56.728 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.anketify.AnketifyApplicationTests], using SpringBootContextLoader
-13:11:56.733 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.anketify.AnketifyApplicationTests]: class path resource [com/example/anketify/AnketifyApplicationTests-context.xml] does not exist
-13:11:56.735 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.anketify.AnketifyApplicationTests]: class path resource [com/example/anketify/AnketifyApplicationTestsContext.groovy] does not exist
-13:11:56.737 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.anketify.AnketifyApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-13:11:56.863 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.anketify.AnketifyApplicationTests]
-13:11:57.092 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.anketify.AnketifyApplicationTests]: using defaults.
-13:11:57.097 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-13:11:57.131 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5184c8ff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5dfa135e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4d290663, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@439c71ea, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@34a89a56, org.springframework.test.context.support.DirtiesContextTestExecutionListener@39c51f7e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3c5a1c3b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1c69397b, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@6c637a8a, org.springframework.test.context.event.EventPublishingTestExecutionListener@7d4cb697, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@119bd6c1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@44ec8768, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@33ac1255, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2bccf2b9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@64ae04df, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@445918e5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@17b49481]
-13:11:57.136 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@34f5f5a0 testClass = AnketifyApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@47947471 testClass = AnketifyApplicationTests, locations = '{}', classes = '{class com.example.anketify.AnketifyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@23a73dab, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2b83d93b, [ImportsContextCustomizer@6b6871f2 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1c0e8a6b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6f8f1f58, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1847f694, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2410ed5b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [true] with mode [AFTER_EACH_TEST_METHOD].
-13:11:57.197 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+<pre>09:04:56.374 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+09:04:56.428 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+09:04:56.597 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.anketify.AnketifyApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+09:04:56.649 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.anketify.AnketifyApplicationTests], using SpringBootContextLoader
+09:04:56.658 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.anketify.AnketifyApplicationTests]: class path resource [com/example/anketify/AnketifyApplicationTests-context.xml] does not exist
+09:04:56.662 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.anketify.AnketifyApplicationTests]: class path resource [com/example/anketify/AnketifyApplicationTestsContext.groovy] does not exist
+09:04:56.663 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.anketify.AnketifyApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+09:04:56.985 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.anketify.AnketifyApplicationTests]
+09:04:57.360 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.anketify.AnketifyApplicationTests]: using defaults.
+09:04:57.364 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+09:04:57.465 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5887009c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1b0182b2, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@ed84f22, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@41ba1182, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@21596ac9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@365a7842, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7ab790f4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6b90b821, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@1f588b8, org.springframework.test.context.event.EventPublishingTestExecutionListener@640868ac, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@227e74e9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4c418137, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@61dc604f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@463639d0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@17bed4c3, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5736a73a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@55ea7b8b]
+09:04:57.475 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@482a61c4 testClass = AnketifyApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@149f87f8 testClass = AnketifyApplicationTests, locations = '{}', classes = '{class com.example.anketify.AnketifyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@2a354341, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@478bdc1, [ImportsContextCustomizer@6952c292 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1edbeab6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@46886652, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@650ec09a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4df081d], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [true] with mode [AFTER_EACH_TEST_METHOD].
+09:04:57.584 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -109,35 +124,143 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.4.4)
 
-2021-04-18 13:12:02.829  INFO 94071 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Starting AnketifyApplicationTests using Java 15 on Apples-MacBook-Air.local with PID 94071 (started by apple in /Users/apple/AnketifyProject/anketify)
-2021-04-18 13:12:02.835  INFO 94071 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : No active profile set, falling back to default profiles: default
-2021-04-18 13:12:05.091  INFO 94071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-04-18 13:12:05.218  INFO 94071 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 6 JPA repository interfaces.
-2021-04-18 13:12:05.827  INFO 94071 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6a41f345' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-04-18 13:12:05.849  INFO 94071 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-04-18 13:12:06.219  INFO 94071 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-04-18 13:12:06.412  INFO 94071 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-04-18 13:12:06.575  INFO 94071 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-04-18 13:12:06.668  INFO 94071 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
-2021-04-18 13:12:06.940  INFO 94071 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-04-18 13:12:07.138  INFO 94071 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2021-04-18 13:12:07.848  INFO 94071 --- [    Test worker] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1ec211b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2021-04-18 13:12:08.107  INFO 94071 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-04-18 13:12:08.117  INFO 94071 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-04-18 13:12:09.144  WARN 94071 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-04-18 13:12:10.353  INFO 94071 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c4996d6, org.springframework.security.web.context.SecurityContextPersistenceFilter@49fbc2a6, org.springframework.security.web.header.HeaderWriterFilter@54f1db0c, org.springframework.web.filter.CorsFilter@590753cb, org.springframework.security.web.authentication.logout.LogoutFilter@5a7fe501, com.example.anketify.components.JwtRequestFilter@38a5405c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@254cde57, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@751452, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e193b12, org.springframework.security.web.session.SessionManagementFilter@518b9453, org.springframework.security.web.access.ExceptionTranslationFilter@4102bfc9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25cd9185]
-2021-04-18 13:12:10.657  INFO 94071 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-18 13:12:11.167  INFO 94071 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-04-18 13:12:11.167  INFO 94071 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-04-18 13:12:11.169  INFO 94071 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2021-04-18 13:12:11.203  INFO 94071 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Started AnketifyApplicationTests in 13.995 seconds (JVM running for 16.159)
-2021-04-18 13:12:11.820  INFO 94071 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2021-04-18 13:12:11.820  INFO 94071 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-04-18 13:12:11.821  INFO 94071 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2021-04-18 13:12:11.990  INFO 94071 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-18 13:12:11.994  INFO 94071 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-04-18 13:12:11.997  INFO 94071 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-04-18 13:12:12.013  INFO 94071 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-19 09:05:03.617  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Starting AnketifyApplicationTests using Java 15 on Apples-MacBook-Air.local with PID 31887 (started by apple in /Users/apple/AnketifyProject/anketify)
+2021-04-19 09:05:03.636  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : No active profile set, falling back to default profiles: default
+2021-04-19 09:05:08.215  INFO 31887 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 09:05:08.462  INFO 31887 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 225 ms. Found 6 JPA repository interfaces.
+2021-04-19 09:05:09.463  INFO 31887 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@d737a17' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-19 09:05:09.528  INFO 31887 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-19 09:05:10.161  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-19 09:05:10.402  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-19 09:05:10.792  INFO 31887 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 09:05:10.973  INFO 31887 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-04-19 09:05:11.440  INFO 31887 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-19 09:05:11.797  INFO 31887 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-04-19 09:05:13.039  INFO 31887 --- [    Test worker] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5f156617] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-04-19 09:05:13.395  INFO 31887 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 09:05:13.408  INFO 31887 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 09:05:15.274  WARN 31887 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 09:05:17.743  INFO 31887 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43d5bb39, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e56acee, org.springframework.security.web.header.HeaderWriterFilter@1390d291, org.springframework.web.filter.CorsFilter@6e64fc05, org.springframework.security.web.authentication.logout.LogoutFilter@5037bbe6, com.example.anketify.components.JwtRequestFilter@30bf9196, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29faced6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17cfb672, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15123a31, org.springframework.security.web.session.SessionManagementFilter@236d1469, org.springframework.security.web.access.ExceptionTranslationFilter@3e2f45c2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a0c6984]
+2021-04-19 09:05:18.302  INFO 31887 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 09:05:19.114  INFO 31887 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-04-19 09:05:19.114  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-19 09:05:19.118  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-04-19 09:05:19.207  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Started AnketifyApplicationTests in 21.584 seconds (JVM running for 25.573)
+2021-04-19 09:05:20.399  INFO 31887 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-04-19 09:05:20.422  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-19 09:05:20.426  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-04-19 09:05:20.757  INFO 31887 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 09:05:20.766  INFO 31887 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 09:05:20.808  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-19 09:05:20.826  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.4)
+
+2021-04-19 09:05:25.967  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Starting AnketifyApplicationTests using Java 15 on Apples-MacBook-Air.local with PID 31887 (started by apple in /Users/apple/AnketifyProject/anketify)
+2021-04-19 09:05:25.972  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : No active profile set, falling back to default profiles: default
+2021-04-19 09:05:26.645  INFO 31887 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 09:05:26.719  INFO 31887 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 6 JPA repository interfaces.
+2021-04-19 09:05:26.968  INFO 31887 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@77094293' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-19 09:05:26.982  INFO 31887 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-19 09:05:27.173  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-04-19 09:05:27.193  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-04-19 09:05:27.219  INFO 31887 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 09:05:27.238  INFO 31887 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-04-19 09:05:27.464  INFO 31887 --- [    Test worker] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@189791ae] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-04-19 09:05:27.787  INFO 31887 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 09:05:27.788  INFO 31887 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 09:05:28.374  WARN 31887 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 09:05:29.547  INFO 31887 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@483c1956, org.springframework.security.web.context.SecurityContextPersistenceFilter@599e00de, org.springframework.security.web.header.HeaderWriterFilter@57ad27c3, org.springframework.web.filter.CorsFilter@177a1323, org.springframework.security.web.authentication.logout.LogoutFilter@2cfd2848, com.example.anketify.components.JwtRequestFilter@591fdc3d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d9ab6ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13371fa2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d75e00a, org.springframework.security.web.session.SessionManagementFilter@51a8e8ab, org.springframework.security.web.access.ExceptionTranslationFilter@15ea5cd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@78a33d90]
+2021-04-19 09:05:29.754  INFO 31887 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 09:05:30.100  INFO 31887 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-04-19 09:05:30.102  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-19 09:05:30.105  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-04-19 09:05:30.145  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Started AnketifyApplicationTests in 9.252 seconds (JVM running for 36.511)
+2021-04-19 09:05:30.184  INFO 31887 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-04-19 09:05:30.185  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-19 09:05:30.187  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-04-19 09:05:30.417  INFO 31887 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 09:05:30.424  INFO 31887 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 09:05:30.425  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-04-19 09:05:30.438  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.4)
+
+2021-04-19 09:05:30.585  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Starting AnketifyApplicationTests using Java 15 on Apples-MacBook-Air.local with PID 31887 (started by apple in /Users/apple/AnketifyProject/anketify)
+2021-04-19 09:05:30.588  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : No active profile set, falling back to default profiles: default
+2021-04-19 09:05:31.168  INFO 31887 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 09:05:31.225  INFO 31887 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 6 JPA repository interfaces.
+2021-04-19 09:05:31.415  INFO 31887 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@245439ff' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-19 09:05:31.427  INFO 31887 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-19 09:05:31.559  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-04-19 09:05:31.591  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-04-19 09:05:31.634  INFO 31887 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 09:05:31.642  INFO 31887 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-04-19 09:05:31.826  INFO 31887 --- [    Test worker] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2eb3247] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-04-19 09:05:32.238  INFO 31887 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 09:05:32.238  INFO 31887 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 09:05:32.595  WARN 31887 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 09:05:33.529  INFO 31887 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@319265dc, org.springframework.security.web.context.SecurityContextPersistenceFilter@31fe5b58, org.springframework.security.web.header.HeaderWriterFilter@5fa2f4cb, org.springframework.web.filter.CorsFilter@342356ba, org.springframework.security.web.authentication.logout.LogoutFilter@696e3e68, com.example.anketify.components.JwtRequestFilter@5708d738, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3bde4443, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7312fb5f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4ada0017, org.springframework.security.web.session.SessionManagementFilter@11591374, org.springframework.security.web.access.ExceptionTranslationFilter@3af60b97, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@386e774b]
+2021-04-19 09:05:33.695  INFO 31887 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 09:05:34.045  INFO 31887 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-04-19 09:05:34.046  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-19 09:05:34.048  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-04-19 09:05:34.072  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Started AnketifyApplicationTests in 3.623 seconds (JVM running for 40.437)
+2021-04-19 09:05:34.104  INFO 31887 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-04-19 09:05:34.104  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-19 09:05:34.105  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-04-19 09:05:34.115  INFO 31887 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 09:05:34.122  INFO 31887 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 09:05:34.134  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-04-19 09:05:34.158  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.4)
+
+2021-04-19 09:05:39.286  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Starting AnketifyApplicationTests using Java 15 on Apples-MacBook-Air.local with PID 31887 (started by apple in /Users/apple/AnketifyProject/anketify)
+2021-04-19 09:05:39.287  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : No active profile set, falling back to default profiles: default
+2021-04-19 09:05:39.850  INFO 31887 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-19 09:05:39.940  INFO 31887 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+2021-04-19 09:05:40.146  INFO 31887 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1208c3d0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-19 09:05:40.182  INFO 31887 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-19 09:05:40.292  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-04-19 09:05:40.343  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-04-19 09:05:40.387  INFO 31887 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-19 09:05:40.398  INFO 31887 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-04-19 09:05:40.616  INFO 31887 --- [    Test worker] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5bea3f8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-04-19 09:05:41.003  INFO 31887 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-19 09:05:41.004  INFO 31887 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 09:05:41.235  WARN 31887 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-19 09:05:41.886  INFO 31887 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39c8c1e6, org.springframework.security.web.context.SecurityContextPersistenceFilter@773ca2c0, org.springframework.security.web.header.HeaderWriterFilter@14c2b8d1, org.springframework.web.filter.CorsFilter@20750639, org.springframework.security.web.authentication.logout.LogoutFilter@4ddb6b7f, com.example.anketify.components.JwtRequestFilter@479ff619, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@753ae4ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74bfdea8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b491d60, org.springframework.security.web.session.SessionManagementFilter@55cfc701, org.springframework.security.web.access.ExceptionTranslationFilter@1206485, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f54f3d8]
+2021-04-19 09:05:42.038  INFO 31887 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 09:05:42.348  INFO 31887 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-04-19 09:05:42.351  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-19 09:05:42.356  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2021-04-19 09:05:42.400  INFO 31887 --- [    Test worker] c.e.anketify.AnketifyApplicationTests    : Started AnketifyApplicationTests in 8.187 seconds (JVM running for 48.766)
+2021-04-19 09:05:42.434  INFO 31887 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-04-19 09:05:42.435  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-19 09:05:42.436  INFO 31887 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-04-19 09:05:43.042  INFO 31887 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-19 09:05:43.045  INFO 31887 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-19 09:05:43.046  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-04-19 09:05:43.053  INFO 31887 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
 </pre>
 </span>
 </div>
@@ -149,7 +272,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8.3</a> at 18.04.2021 г., 13:12:12</p>
+<a href="http://www.gradle.org">Gradle 6.8.3</a> at 19.04.2021 г., 9:05:43</p>
 </div>
 </div>
 </body>
